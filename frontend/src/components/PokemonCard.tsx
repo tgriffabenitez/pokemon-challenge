@@ -56,7 +56,7 @@ const PokemonCard: React.FC<Props> = ({ pokemon }) => {
 	];
 
 	return (
-		<Card key={pokemon?.id} className='h-[450px] w-[300px] flex flex-col justify-center p-1'>
+		<Card key={pokemon?.id} className='h-full w-full flex flex-col justify-center p-1 pb-5'>
 			<PokemonImage imageUrl={pokemon?.imageUrl} name={pokemon?.name} />
 			<PokemonInfo name={pokemon?.name} />
 			<PokemonStats stats={pokemonStats} />

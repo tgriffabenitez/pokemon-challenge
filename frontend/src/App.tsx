@@ -57,7 +57,7 @@ function App() {
 
 			<div className={`mt-6`}>{winner ? <BattleResult pokemon={winner} /> : <div className='h-[50px]'/>}</div>
 
-			<div className='mt-6'>
+			<div className='mt-8'>
 				{selectedPokemon && oponent ? (
 					<PokemonBattle
 						selectedPokemon={selectedPokemon}

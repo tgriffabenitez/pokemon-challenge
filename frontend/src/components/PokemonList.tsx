@@ -37,7 +37,7 @@ const PokemonList: React.FC<PokemonListPorps> = ({ pokemonList, handleSelectPoke
 			<div>
 				<h3 className='text-black text-lg font-semibold mb-2'>Select your pokemon</h3>
 			</div>
-			<div className='flex flex-row gap-3 justify-between'>
+			<div className='grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 justify-between'>
 				{pokemonList?.map((pokemon: Pokemon) => (
 					<div key={pokemon.id}>
 						<PokemonCard pokemon={pokemon} handleSelectPokemon={handleSelectPokemon} />
