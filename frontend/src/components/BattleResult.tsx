@@ -8,7 +8,7 @@ type BattleResultProps = {
 
 const BattleResult: React.FC<BattleResultProps> = ({ pokemon }) => {
 	return (
-		<div>
+		<div className='h-[50px]'>
 			<Alert icon={false} severity='info' sx={alertStyle}>
 				{`${pokemon.name} wins!`}
 			</Alert>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { createBattle, getPokemonList } from './api/endpoints';
 import './App.css';
+import BattleResult from './components/BattleResult';
 import PokemonBattle from './components/PokemonBattle';
 import PokemonList from './components/PokemonList';
 import { Pokemon } from './types/Pokemon';
 import { selectRandomPokemon } from './utils/utils';
-import BattleResult from './components/BattleResult';
 
 function App() {
 	const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
@@ -22,6 +22,7 @@ function App() {
 	}, []);
 
 	const handleSelectPokemon = (pokemon: Pokemon) => {
+		setWinner(null);
 		const selected = pokemonList.find((p) => p.id === pokemon.id);
 		if (!selected) return;
 
@@ -50,13 +51,13 @@ function App() {
 				<h1 className='text-black text-3xl font-bold'>Battle of Pokemon</h1>
 			</div>
 
-			<div className='mt-8'>
+			<div className='mt-6'>
 				<PokemonList pokemonList={pokemonList} handleSelectPokemon={handleSelectPokemon} />
 			</div>
 
-			<div className='mt-8'>{winner ? <BattleResult pokemon={winner} /> : null}</div>
+			<div className={`mt-6`}>{winner ? <BattleResult pokemon={winner} /> : <div className='h-[50px]'/>}</div>
 
-			<div className='mt-8'>
+			<div className='mt-6'>
 				{selectedPokemon && oponent ? (
 					<PokemonBattle
 						selectedPokemon={selectedPokemon}
